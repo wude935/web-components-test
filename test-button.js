@@ -62,8 +62,11 @@ class TestButton extends HTMLElement {
         this.shadowRoot.appendChild(TestButtonTemplate.content.cloneNode(true));
         // takes HTML attribute and puts it inside the element
         this.shadowRoot.querySelector('.text').textContent = this.getAttribute('text')
-        // takes HTML attribute and changes the element's CSS
-        this.shadowRoot.querySelector('button').style.backgroundColor = this.getAttribute('background-color')
+        // takes HTML attribute and changes the element's CSS directly
+        this.shadowRoot.querySelector('button').style.borderRadius = this.getAttribute('border-radius')
+        // takes HTML attribute and changes the element's CSS by changing the CSS variable (🚨 which approach is better and how do you get this to work?)
+        document.documentElement.style.setProperty('--primary-text-color', 'white')
+        console.log(document.documentElement.style.primaryTextColor)
         // changes text whenever the button is clicked
         this.shadowRoot.querySelector('button').addEventListener('click', () => this.changeText(this.pressState))
     }

@@ -1,0 +1,5 @@
+/* :host selects the root element of the shadow DOM */
+:root, :host {
+    --primary-color: #cc5500;
+    --primary-text-color: black;
+}
