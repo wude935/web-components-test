@@ -1,0 +1,35 @@
+button {
+    width: fit-content;
+    padding: 2px 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .6;
+}
+
+.text {
+    color: white;
+    width: 80%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.icon {
+    width: fit-content;
+    justify-content: flex-start;
+}
+
+slot[name='icon-left']::slotted(icon) {
+    font-size: 12px;
+}
+
+slot[name='icon-right']::slotted(icon) {
+    font-size: 24px;
+}

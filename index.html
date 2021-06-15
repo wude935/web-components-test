@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Web Components Test</title>
+  <meta name="description" content="Test for Web Components">
+  <meta name="author" content="Derek">
+</head>
+
+<body>
+    <h1>Web Components Test</h1>
+    <test-button text="Hook'em" background-color="red">
+      <icon slot='icon-right'>🤘🏻</icon>
+    </test-button>
+    <script src="test-button.js"></script>
+    <script>
+      // used to test custom events from web-components
+      document.querySelector('body').addEventListener('test-event', event => console.log(event.detail))
+    </script>
+</body>
+</html>
